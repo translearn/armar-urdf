@@ -58,6 +58,13 @@ import armar
 armar.get_path_to_urdf_file(robot_name="armar6")
 ```
 
+## Example: Models controlled by a Neural Network
+
+[![Video: 2 vs. 4 Arms: Humanoid Battle controlled by Neural Networks](https://yt-embed.herokuapp.com/embed?v=Iib3wC0O5no)](https://www.youtube.com/watch?v=Iib3wC0O5no)
+
+
+
+
 ## Acknowledment and Disclaimer
 
 The robots of the ARMAR family are designed and developed by the [Chair of High Performance Humanoid Technologies (H²T)](https://h2t.anthropomatik.kit.edu/english/index.php) at the Karlsruhe Institute of Technology (KIT).

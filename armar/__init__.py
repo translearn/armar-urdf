@@ -1,0 +1,1 @@
+from armar.urdf_provider import get_path_to_urdf_file

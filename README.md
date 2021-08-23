@@ -41,7 +41,7 @@ As of now, the following robots are supported:
 </table>
 
 
-The corresponding URDF files can be found in the description directory. 
+The corresponding URDF files can be found in the [description directory](https://github.com/translearn/armar-urdf/tree/main/armar/description). 
 As shown below, it is also possible to access the models directly from python. 
 
 

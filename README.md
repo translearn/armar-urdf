@@ -10,7 +10,7 @@ As of now, the following robots are supported:
         <tr>
             <th></th>
             <th>robot_name</th>
-            <th>DOFs</th>
+            <th>DOF</th>
             <th>Description</th>
         </tr>
     </thead>
@@ -65,7 +65,7 @@ armar.get_path_to_urdf_file(robot_name="armar6")
 
 
 
-## Acknowledment and Disclaimer
+## Acknowledgment and Disclaimer
 
 The robots of the ARMAR family are designed and developed by the [Chair of High Performance Humanoid Technologies (H²T)](https://h2t.anthropomatik.kit.edu/english/index.php) at the Karlsruhe Institute of Technology (KIT).
 The URDF files provided in this repository are based on models provided by the Chair of High Performance Humanoid Technologies.

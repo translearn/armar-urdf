@@ -60,7 +60,7 @@ armar.get_path_to_urdf_file(robot_name="armar6")
 
 ## Example: Models controlled by a Neural Network
 
-[![Video: 2 vs. 4 Arms: Humanoid Battle controlled by Neural Networks](https://yt-embed.herokuapp.com/embed?v=Iib3wC0O5no)](https://www.youtube.com/watch?v=Iib3wC0O5no)
+[![Video: 2 vs. 4 Arms: Humanoid Battle controlled by Neural Networks](https://user-images.githubusercontent.com/51738372/130785704-014d9df6-e0b8-425d-991a-22581224f666.png)](https://www.youtube.com/watch?v=Iib3wC0O5no)
 
 
 

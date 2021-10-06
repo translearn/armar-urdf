@@ -1,0 +1,2006 @@
+<?xml version="1.0" ?>
+<robot name="main">
+  <link name="world"/>
+  <joint name="root_joint" type="fixed">
+    <parent link="world"/>
+    <child link="root"/>
+    <origin rpy="0 0 0" xyz="0 0 1.0225"/>
+  </joint>
+  <link name="root">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 -0.0464755"/>
+      <mass value="5"/>
+      <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/visual/root.obj"/>
+      </geometry>
+      <material name="grey">
+        <color rgba="0.537 0.537 0.537 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/collision/root.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="legl_hip1_joint" type="revolute">
+    <parent link="root"/>
+    <child link="legl_hip1"/>
+    <origin rpy="0 -0.6154033 0" xyz="0.124 0 -0.126"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="240" lower="-0.4906" upper="1.5809" velocity="1.710422666954443"/>
+    <dynamics damping="0.5"/>
+  </joint>
+  <link name="legl_hip1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.0114784 -0.0190205 0.0463836"/>
+      <mass value="1.33"/>
+      <inertia ixx="0.00676843" ixy="0" ixz="0" iyy="0.00676843" iyz="0" izz="0.00453669"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/visual/legl_hip1_joint.obj"/>
+      </geometry>
+      <material name="white">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/collision/legl_hip1_joint.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="legl_hip2_joint" type="revolute">
+    <parent link="legl_hip1"/>
+    <child link="legl_hip2"/>
+    <origin rpy="0 -1.5707962 0.7853983" xyz="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="240" lower="-0.1853" upper="0.6542" velocity="1.710422666954443"/>
+    <dynamics damping="0.5"/>
+  </joint>
+  <link name="legl_hip2">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.000313077 0.0280972 0.00778463"/>
+      <mass value="0.36"/>
+      <inertia ixx="0.000773543" ixy="0" ixz="0" iyy="0.000379211" iyz="0" izz="0.000858843"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/visual/legl_hip2_joint.obj"/>
+      </geometry>
+      <material name="grey">
+        <color rgba="0.537 0.537 0.537 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/collision/legl_hip2_joint.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="legl_hip3_joint" type="revolute">
+    <parent link="legl_hip2"/>
+    <child link="legl_hip3"/>
+    <origin rpy="-1.5707964 0 0" xyz="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="240" lower="-0.9812" upper="0.8177" velocity="1.710422666954443"/>
+    <dynamics damping="0.5"/>
+  </joint>
+  <link name="legl_hip3">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.149052 -0.134842 0.0788454"/>
+      <mass value="5.06"/>
+      <inertia ixx="0.0570551" ixy="0" ixz="0" iyy="0.0867303" iyz="0" izz="0.101375"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/visual/legl_hip3_joint.obj"/>
+      </geometry>
+      <material name="white">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/collision/legl_hip3_joint.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="legl_knee_joint" type="revolute">
+    <parent link="legl_hip3"/>
+    <child link="legl_knee"/>
+    <origin rpy="2.0943953 0.615403 2.3561942" xyz="-0.303136 -0.197542 0.173784"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="240" lower="0" upper="1.6354" velocity="1.710422666954443"/>
+    <dynamics damping="0.5"/>
+  </joint>
+  <link name="legl_knee">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0200931 0.0134739 -0.186405"/>
+      <mass value="4.25"/>
+      <inertia ixx="0.089890" ixy="0" ixz="0" iyy="0.0880982" iyz="0" izz="0.0122883"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/visual/legl_knee_joint.obj"/>
+      </geometry>
+      <material name="white">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/collision/legl_knee_joint.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="legl_ank1_joint" type="revolute">
+    <parent link="legl_knee"/>
+    <child link="legl_ank1"/>
+    <origin rpy="0 -1.5707963 0" xyz="0 0 -0.4085"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="240" lower="-0.4906" upper="0.4906" velocity="1.710422666954443"/>
+    <dynamics damping="0.5"/>
+  </joint>
+  <link name="legl_ank1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.5"/>
+      <inertia ixx="0.089890" ixy="0" ixz="0" iyy="0.0880982" iyz="0" izz="0.0122883"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <sphere radius="0.00"/>
+      </geometry>
+      <material name="white">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <sphere radius="0.00"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="legl_ank2_joint" type="revolute">
+    <parent link="legl_ank1"/>
+    <child link="legl_ank2"/>
+    <origin rpy="1.5707964 0 0" xyz="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="240" lower="-0.06" upper="0.06" velocity="1.710422666954443"/>
+    <dynamics damping="0.5"/>
+  </joint>
+  <link name="legl_ank2">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.0328382 -0.0160825 0.0358811"/>
+      <mass value="1.94"/>
+      <inertia ixx="0.0105498" ixy="0" ixz="0" iyy="0.0103366" iyz="0" izz="0.00444324"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/visual/legl_ank2_joint.obj"/>
+      </geometry>
+      <material name="white">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/collision/legl_ank2_joint.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="legl_heel_joint" type="fixed">
+    <parent link="legl_ank2"/>
+    <child link="legl_heel"/>
+    <origin rpy="-1.5707964 0 0" xyz="-0.0795 0 -0.053"/>
+  </joint>
+  <link name="legl_heel">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.00118398 0.00843963 -0.00707974"/>
+      <mass value="0.05"/>
+      <inertia ixx="1.59042e-05" ixy="0" ixz="0" iyy="9.82349e-06" iyz="0" izz="7.28604e-06"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/visual/legl_heel_joint.obj"/>
+      </geometry>
+      <material name="light_grey">
+        <color rgba="0.796078431 0.796078431 0.752941176 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/collision/legl_heel_joint.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="legl_toe_joint" type="fixed">
+    <parent link="legl_ank2"/>
+    <child link="legl_toe"/>
+    <origin rpy="-1.5707964 0 0" xyz="-0.07424 0.0244 0.13112"/>
+    <!-- 
+    <axis xyz="0 0 1"/>
+    <limit effort="240" lower="0" upper="0.785398" velocity="1.710422666954443"/>
+    <dynamics damping="0.5"/> 
+    -->
+  </joint>
+  <link name="legl_toe">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.00450309 -0.0217059 0.003872"/>
+      <mass value="0.13"/>
+      <inertia ixx="9.91014e-05" ixy="0" ixz="0" iyy="7.72887e-05" iyz="0" izz="2.81054e-05"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/visual/legl_toe_joint.obj"/>
+      </geometry>
+      <material name="light_grey">
+        <color rgba="0.796078431 0.796078431 0.752941176 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/collision/legl_toe_joint.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="legl_toe2_joint" type="fixed">
+    <parent link="legl_ank2"/>
+    <child link="legl_toe2"/>
+    <origin rpy="-1.1344644 0 0" xyz="-0.0742 -0.006 0.1311"/>
+    <!-- 
+    <axis xyz="0 0 1"/>
+    <limit effort="240" lower="0" upper="0.785398" velocity="1.710422666954443"/>
+    <dynamics damping="0.5"/>
+    --> 
+  </joint>
+  <link name="legl_toe2">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.00364243 -0.0248759 -0.0129597"/>
+      <mass value="0.13"/>
+      <inertia ixx="9.91014e-05" ixy="0" ixz="0" iyy="7.72887e-05" iyz="0" izz="2.81054e-05"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/visual/legl_toe2_joint.obj"/>
+      </geometry>
+      <material name="light_grey">
+        <color rgba="0.796078431 0.796078431 0.752941176 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/collision/legl_toe2_joint.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="legr_hip1_joint" type="revolute">
+    <parent link="root"/>
+    <child link="legr_hip1"/>
+    <origin rpy="3.1415927 0.6154033 0" xyz="-0.124 0 -0.126"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="240" lower="-0.4906" upper="1.5809" velocity="1.710422666954443"/>
+    <dynamics damping="0.5"/>
+  </joint>
+  <link name="legr_hip1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.00955501 0.0122137 -0.0512045"/>
+      <mass value="1.33"/>
+      <inertia ixx="0.00676843" ixy="0" ixz="0" iyy="0.00676844" iyz="0" izz="0.00453669"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/visual/legr_hip1_joint.obj"/>
+      </geometry>
+      <material name="white">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/collision/legr_hip1_joint.stl"/>
+      </geometry>
+    </collision>
+  </link>  
+  <joint name="legr_hip2_joint" type="revolute">
+    <parent link="legr_hip1"/>
+    <child link="legr_hip2"/>
+    <origin rpy="0 -1.5707962 0.7853983" xyz="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="240" lower="-0.1853" upper="0.6541" velocity="1.710422666954443"/>
+    <dynamics damping="0.5"/>
+  </joint>
+  <link name="legr_hip2">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.00120298 -0.0347459 -0.000660893"/>
+      <mass value="0.36"/>
+      <inertia ixx="0.000773544" ixy="0" ixz="0" iyy="0.000379211" iyz="0" izz="0.000858844"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/visual/legr_hip2_joint.obj"/>
+      </geometry>
+      <material name="grey">
+        <color rgba="0.537 0.537 0.537 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/collision/legr_hip2_joint.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="legr_hip3_joint" type="revolute">
+    <parent link="legr_hip2"/>
+    <child link="legr_hip3"/>
+    <origin rpy="-1.5707964 0 0" xyz="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="240" lower="-0.9812" upper="0.8177" velocity="1.710422666954443"/>
+    <dynamics damping="0.5"/>
+  </joint>
+  <link name="legr_hip3">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.154728 0.131798 -0.0639989"/>
+      <mass value="5.06"/>
+      <inertia ixx="0.0570551" ixy="0" ixz="0" iyy="0.0867303" iyz="0" izz="0.101375"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/visual/legr_hip3_joint.obj"/>
+      </geometry>
+      <material name="white">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/collision/legr_hip3_joint.stl"/>
+      </geometry>
+    </collision>
+  </link> 
+  <joint name="legr_knee_joint" type="revolute">
+    <parent link="legr_hip3"/>
+    <child link="legr_knee"/>
+    <origin rpy="2.0943953 0.615403 2.3561942" xyz="0.3031 0.1975 -0.1738"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="240" lower="0" upper="1.6354" velocity="1.710422666954443"/>
+    <dynamics damping="0.5"/>
+  </joint>
+  <link name="legr_knee">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.0226642 -0.0123348 0.187084"/>
+      <mass value="4.25"/>
+      <inertia ixx="0.089890" ixy="0" ixz="0" iyy="0.0881157" iyz="0" izz="0.0123005"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/visual/legr_knee_joint.obj"/>
+      </geometry>
+      <material name="white">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/collision/legr_knee_joint.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="legr_ank1_joint" type="revolute">
+    <parent link="legr_knee"/>
+    <child link="legr_ank1"/>
+    <origin rpy="0 -1.5707963 0" xyz="0 0 0.4085"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="240" lower="-0.4906" upper="0.4906" velocity="1.710422666954443"/>
+    <dynamics damping="0.5"/>
+  </joint>
+  <link name="legr_ank1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.5"/>
+      <inertia ixx="0.089890" ixy="0" ixz="0" iyy="0.0880982" iyz="0" izz="0.0122883"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <sphere radius="0.00"/>
+      </geometry>
+      <material name="white">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <sphere radius="0.00"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="legr_ank2_joint" type="revolute">
+    <parent link="legr_ank1"/>
+    <child link="legr_ank2"/>
+    <origin rpy="1.5707964 0 0" xyz="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="240" lower="-0.06" upper="0.06" velocity="1.710422666954443"/>
+    <dynamics damping="0.5"/>
+  </joint>
+  <link name="legr_ank2">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0333756 0.0137197 -0.0381945"/>
+      <mass value="1.94"/>
+      <inertia ixx="0.0105498" ixy="0" ixz="0" iyy="0.0103366" iyz="0" izz="0.00444324"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/visual/legr_ank2_joint.obj"/>
+      </geometry>
+      <material name="white">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/collision/legr_ank2_joint.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="legr_heel_joint" type="fixed">
+    <parent link="legr_ank2"/>
+    <child link="legr_heel"/>
+    <origin rpy="0 0 0" xyz="0.07945 0 0.0529"/>
+  </joint>
+  <link name="legr_heel">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.00118398 0.00843963 -0.00707974"/>
+      <mass value="0.05"/>
+      <inertia ixx="1.59042e-05" ixy="0" ixz="0" iyy="7.28912e-06" iyz="0" izz="9.82714e-06"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/visual/legr_heel_joint.obj"/>
+      </geometry>
+      <material name="light_grey">
+        <color rgba="0.796078431 0.796078431 0.752941176 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/collision/legr_heel_joint.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="legr_toe_joint" type="fixed">
+    <parent link="legr_ank2"/>
+    <child link="legr_toe"/>
+    <origin rpy="3.1415927 0 3.1415927" xyz="0.0743 -0.0254 -0.13117"/> 
+  </joint>
+  <link name="legr_toe">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.00461182 -0.00368414 0.0237567"/>
+      <mass value="0.13"/>
+      <inertia ixx="9.91014e-05" ixy="0" ixz="0" iyy="7.72887e-05" iyz="0" izz="2.81054e-05"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/visual/legr_toe_joint.obj"/>
+      </geometry>
+      <material name="light_grey">
+        <color rgba="0.796078431 0.796078431 0.752941176 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/collision/legr_toe_joint.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="legr_toe2_joint" type="fixed">
+    <parent link="legr_ank2"/>
+    <child link="legr_toe2"/>
+    <origin rpy="-1.1344644 0 0" xyz="0.0743 0.006 -0.1312"/>
+  </joint>
+  <link name="legr_toe2">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.00326758 0.0207888 0.0125232"/>
+      <mass value="0.13"/>
+      <inertia ixx="9.90857e-05" ixy="0" ixz="0" iyy="7.72553e-05" iyz="0" izz="2.8123e-05"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/visual/legr_toe2_joint.obj"/>
+      </geometry>
+      <material name="light_grey">
+        <color rgba="0.796078431 0.796078431 0.752941176 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/collision/legr_toe2_joint.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="torso_yaw_joint" type="revolute">
+    <parent link="root"/>
+    <child link="torso_yaw"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="240" lower="-1.5708" upper="1.5708" velocity="1.710422666954443"/>
+    <dynamics damping="0.5"/>
+  </joint>
+  <link name="torso_yaw">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.000749969 0 0.074585"/>
+      <mass value="1.33"/>
+      <inertia ixx="0.0137914" ixy="0" ixz="0" iyy="0.0165096" iyz="0" izz="0.0117209"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/visual/torso_yaw_joint.obj"/>
+      </geometry>
+      <material name="grey">
+        <color rgba="0.537 0.537 0.537 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/collision/torso_yaw_joint.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="torso_pitch_joint" type="revolute">
+    <parent link="torso_yaw"/>
+    <child link="torso_pitch"/>
+    <origin rpy="1.5707964 0 1.5707964" xyz="0 0 0.099879"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="240" lower="-0.785398" upper="0.785398" velocity="1.710422666954443"/>
+    <dynamics damping="0.5"/>
+  </joint>
+  <link name="torso_pitch">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.0192648 0.13965 -0.000621773"/>
+      <mass value="25.49"/>
+      <inertia ixx="0.50297" ixy="0" ixz="0" iyy="0.332368" iyz="0" izz="0.479884"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/visual/torso_pitch_joint.obj"/>
+      </geometry>
+      <material name="white">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/collision/torso_pitch_joint.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="neck_1_joint" type="fixed">
+    <parent link="torso_pitch"/>
+    <child link="neck_1"/>
+    <origin rpy="0 0 -1.5707964" xyz="0 0.3073 0"/>
+  </joint>
+  <link name="neck_1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0.0191001 -0.000249887"/>
+      <mass value="0.14"/>
+      <inertia ixx="0.000159421" ixy="0" ixz="0" iyy="9.60035e-05" iyz="0" izz="0.000100439"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/visual/neck_1_joint.obj"/>
+      </geometry>
+      <material name="grey">
+        <color rgba="0.537 0.537 0.537 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/collision/neck_1_joint.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="neck_2_joint" type="fixed">
+    <parent link="neck_1"/>
+    <child link="neck_2"/>
+    <origin rpy="0 1.5707963 1.5707964" xyz="0 0 0"/>
+  </joint>
+  <link name="neck_2">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0.0427501 0.0144084"/>
+      <mass value="0.13"/>
+      <inertia ixx="0.000251672" ixy="0" ixz="0" iyy="0.000120919" iyz="0" izz="0.000168382"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/visual/neck_2_joint.obj"/>
+      </geometry>
+      <material name="light_grey">
+        <color rgba="0.796078431 0.796078431 0.752941176 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/collision/neck_2_joint.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="neck_3_joint" type="fixed">
+    <parent link="neck_2"/>
+    <child link="neck_3"/>
+    <origin rpy="0 1.5707963 1.5707964" xyz="0 0.0338 0"/>
+  </joint>
+  <link name="neck_3">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.00675008 -0.0130999 0.0608498"/>
+      <mass value="0.25"/>
+      <inertia ixx="0.000465112" ixy="0" ixz="0" iyy="0.000426562" iyz="0" izz="0.00022281"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/visual/neck_3_joint.obj"/>
+      </geometry>
+      <material name="white">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/collision/neck_3_joint.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="head_1_joint" type="fixed">
+    <parent link="neck_3"/>
+    <child link="head_1"/>
+    <origin rpy="1.5707964 0 -3.1415925" xyz="0 0 0.1062"/>
+  </joint>
+  <link name="head_1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0100501 0 -0.000349847"/>
+      <mass value="0.07"/>
+      <inertia ixx="2.52845e-05" ixy="0" ixz="0" iyy="3.20675e-05" iyz="0" izz="2.7363e-05"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/visual/head_1_joint.obj"/>
+      </geometry>
+      <material name="white">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/collision/head_1_joint.stl"/>
+      </geometry>
+    </collision>
+  </link>
+ <joint name="head_2_joint" type="fixed">
+    <parent link="head_1"/>
+    <child link="head_2"/>
+    <origin rpy="0 1.5707963 0" xyz="0.00465 0 0"/>
+  </joint>
+  <link name="head_2">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.00124981 0.0820215 0.0210557"/>
+      <mass value="1.34"/>
+      <inertia ixx="0.00954863" ixy="0" ixz="0" iyy="0.00822691" iyz="0" izz="0.00721911"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/visual/head_2_joint.obj"/>
+      </geometry>
+      <material name="white">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/collision/head_2_joint.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="eyel_1_joint" type="fixed">
+    <parent link="head_2"/>
+    <child link="eyel_1"/>
+    <origin rpy="1.5707964 0 -1.5707964" xyz="-0.0105 0.0726517 -0.06315"/>
+  </joint>
+  <link name="eyel_1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.00262986 0.0195001 0.0209721"/>
+      <mass value="0.05"/>
+      <inertia ixx="2.52845e-05" ixy="0" ixz="0" iyy="3.20675e-05" iyz="0" izz="2.7363e-05"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/visual/eyel_1_joint.obj"/>
+      </geometry>
+      <material name="grey">
+        <color rgba="0.537 0.537 0.537 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <sphere radius="0.00"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="eyel_2_joint" type="fixed">
+    <parent link="eyel_1"/>
+    <child link="eyel_2"/>
+    <origin rpy="-1.5707964 0 -1.5707964" xyz="0 0 0.036"/>
+  </joint>
+  <link name="eyel_2">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.00624987 0 0.00269453"/>
+      <mass value="0.05"/>
+      <inertia ixx="2.18594e-05" ixy="0" ixz="0" iyy="1.52203e-05" iyz="0" izz="1.41891e-05"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/visual/eyel_2_joint.obj"/>
+      </geometry>
+      <material name="white">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/collision/eyel_2_joint.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="eyer_1_joint" type="fixed">
+    <parent link="head_2"/>
+    <child link="eyer_1"/>
+    <origin rpy="1.5707964 0 -1.5707964" xyz="0.015 0.0726517 -0.06315"/>
+  </joint>
+  <link name="eyer_1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.00262986 0.0195001 -0.0148498"/>
+      <mass value="0.05"/>
+      <inertia ixx="2.52845e-05" ixy="0" ixz="0" iyy="3.20675e-05" iyz="0" izz="2.7363e-05"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/visual/eyer_1_joint.obj"/>
+      </geometry>
+      <material name="grey">
+        <color rgba="0.537 0.537 0.537 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <sphere radius="0.00"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="eyer_2_joint" type="fixed">
+    <parent link="eyer_1"/>
+    <child link="eyer_2"/>
+    <origin rpy="-1.5707964 0 -1.5707964" xyz="0 0 -0.0315"/>
+  </joint>
+  <link name="eyer_2">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.00624987 0 0.00269453"/>
+      <mass value="0.05"/>
+      <inertia ixx="2.18594e-05" ixy="0" ixz="0" iyy="1.52203e-05" iyz="0" izz="1.41891e-05"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/visual/eyer_2_joint.obj"/>
+      </geometry>
+      <material name="white">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/collision/eyer_2_joint.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="arml_sho1_joint" type="revolute">
+    <parent link="torso_pitch"/>
+    <child link="arml_sho1"/>
+    <origin rpy="1.5707963 0 0" xyz="0 0.2103 0"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="240" lower="0" upper="0.785398" velocity="1.710422666954443"/>
+    <dynamics damping="0.5"/>
+  </joint>
+  <link name="arml_sho1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.00635488 0.0837574 -0.0328287"/>
+      <mass value="0.58"/>
+      <inertia ixx="0.00137353" ixy="0" ixz="0" iyy="0.00204376" iyz="0" izz="0.00196295"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/visual/arml_sho1_joint.obj"/>
+      </geometry>
+      <material name="white">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/collision/arml_sho1_joint.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="arml_sho2_joint" type="revolute">
+    <parent link="arml_sho1"/>
+    <child link="arml_sho2"/>
+    <origin rpy="1.3089971 0 0" xyz="0 0.136249 -0.0599"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="240" lower="-0.523599" upper="2.61799" velocity="1.710422666954443"/>
+    <dynamics damping="0.5"/>
+  </joint>
+  <link name="arml_sho2">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.00149987 -0.00344511 -0.0512163"/>
+      <mass value="0.52"/>
+      <inertia ixx="0.000596991" ixy="0" ixz="0" iyy="0.000663986" iyz="0" izz="0.000420505"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/visual/arml_sho2_joint.obj"/>
+      </geometry>
+      <material name="white">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/collision/arml_sho2_joint.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="arml_sho3_joint" type="revolute">
+    <parent link="arml_sho2"/>
+    <child link="arml_sho3"/>
+    <origin rpy="-1.5707964 1.4835301 1.5707964" xyz="0.0165 0 -0.066"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="240" lower="-0.261799" upper="1.39626" velocity="1.710422666954443"/>
+    <dynamics damping="0.5"/>
+  </joint>
+  <link name="arml_sho3">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 -0.0575318 0.0134998"/>
+      <mass value="0.51"/>
+      <inertia ixx="0.00109943" ixy="0" ixz="0" iyy="0.000491725" iyz="0" izz="0.00106067"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/visual/arml_sho3_joint.obj"/>
+      </geometry>
+      <material name="white">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/collision/arml_sho3_joint.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="arml_sho4_joint" type="revolute">
+    <parent link="arml_sho3"/>
+    <child link="arml_sho4"/>
+    <origin rpy="-1.5707964 0 0" xyz="0 -0.1026 0.0165"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="240" lower="-1.39626" upper="2.96706" velocity="1.710422666954443"/>
+    <dynamics damping="0.5"/>
+  </joint>
+  <link name="arml_sho4">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.00188906 -0.00191048 -0.110437"/>
+      <mass value="1.44"/>
+      <inertia ixx="0.00541288" ixy="0" ixz="0" iyy="0.00551224" iyz="0" izz="0.0011448"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/visual/arml_sho4_joint.obj"/>
+      </geometry>
+      <material name="white">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/collision/arml_sho4_joint.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="arml_elb1_joint" type="revolute">
+    <parent link="arml_sho4"/>
+    <child link="arml_elb1"/>
+    <origin rpy="1.5707963 0 -1.5707963" xyz="-0.0215 -0.01 -0.1974"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="240" lower="-0.0872665" upper="1.8151424" velocity="1.710422666954443"/>
+    <dynamics damping="0.5"/>
+  </joint>
+  <link name="arml_elb1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 -0.0334756 -0.026321"/>
+      <mass value="0.61"/>
+      <inertia ixx="0.00114668" ixy="0" ixz="0" iyy="0.000480917" iyz="0" izz="0.0010953"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/visual/arml_elb1_joint.obj"/>
+      </geometry>
+      <material name="white">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/collision/arml_elb1_joint.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="arml_elb2_joint" type="revolute">
+    <parent link="arml_elb1"/>
+    <child link="arml_elb2"/>
+    <origin rpy="0 1.5707963 1.5707964" xyz="0 -0.0858 -0.0205"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="240" lower="-3.14159" upper="1.5708" velocity="1.710422666954443"/>
+    <dynamics damping="0.5"/>
+  </joint>
+  <link name="arml_elb2">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.00297504 -0.0000305709 -0.0877993"/>
+      <mass value="0.43"/>
+      <inertia ixx="0.00142316" ixy="0" ixz="0" iyy="0.00122507" iyz="0" izz="0.000422436"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/visual/arml_elb2_joint.obj"/>
+      </geometry>
+      <material name="white">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/collision/arml_elb2_joint.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="arml_wri1_joint" type="revolute">
+    <parent link="arml_elb2"/>
+    <child link="arml_wri1"/>
+    <origin rpy="-1.5707963 0 1.5707963" xyz="0 0 -0.1642"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="240" lower="-0.349066" upper="0.349066" velocity="1.710422666954443"/>
+    <dynamics damping="0.5"/>
+  </joint>
+  <link name="arml_wri1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.5"/>
+      <inertia ixx="0.089890" ixy="0" ixz="0" iyy="0.0880982" iyz="0" izz="0.0122883"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/visual/arml_wri1_joint.obj"/>
+      </geometry>
+      <material name="light_grey">
+        <color rgba="0.796078431 0.796078431 0.752941176 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <sphere radius="0.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="arml_wri2_joint" type="revolute">
+    <parent link="arml_wri1"/>
+    <child link="arml_wri2"/>
+    <origin rpy="1.5707963 0 1.5707963" xyz="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="240" lower="-1.5708" upper="1.5708" velocity="1.710422666954443"/>
+    <dynamics damping="0.5"/>
+  </joint>
+  <link name="arml_wri2">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0306435 -0.00259348 0.00000821687"/>
+      <mass value="0.58"/>
+      <inertia ixx="0.000423639" ixy="0" ixz="0" iyy="0.000982669" iyz="0" izz="0.00079084"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/visual/arml_wri2_joint.obj"/>
+      </geometry>
+      <material name="white">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/collision/arml_wri2_joint.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="handl_finger_thumb1_joint" type="revolute">
+    <parent link="arml_wri2"/>
+    <child link="handl_finger_thumb1"/>
+    <origin rpy="-1.5707964 0 -1.5707964" xyz="0.0353 0.0098 -0.0111"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="240" lower="0" upper="1.5708" velocity="1.710422666954443"/>
+    <dynamics damping="0.5"/>
+  </joint>
+  <link name="handl_finger_thumb1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.00952735 0.0181103 -0.00222519"/>
+      <mass value="0.05"/>
+      <inertia ixx="1.24401e-05" ixy="0" ixz="0" iyy="5.68049e-06" iyz="0" izz="9.92836e-06"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/visual/handl_finger_thumb1_joint.obj"/>
+      </geometry>
+      <material name="white">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/collision/handl_finger_thumb1_joint.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="handl_finger_thumb2_joint" type="revolute">
+    <parent link="handl_finger_thumb1"/>
+    <child link="handl_finger_thumb2"/>
+    <origin rpy="0 1.5707963 0" xyz="0.0035 0.030 0.0043"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="240" lower="0" upper="1.5708" velocity="1.710422666954443"/>
+    <dynamics damping="0.5"/>
+  </joint>
+  <link name="handl_finger_thumb2">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.00960663 0.0191513 0.00442499"/>
+      <mass value="0.05"/>
+      <inertia ixx="1.06034e-05" ixy="0" ixz="0" iyy="3.76921e-06" iyz="0" izz="1.14429e-05"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/visual/handl_finger_thumb2_joint.obj"/>
+      </geometry>
+      <material name="white">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/collision/handl_finger_thumb2_joint.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="handl_finger_thumb3_joint" type="revolute">
+    <parent link="handl_finger_thumb2"/>
+    <child link="handl_finger_thumb3"/>
+    <origin rpy="0 0 0" xyz="0.0029 0.0294 0"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="240" lower="0" upper="1.5708" velocity="1.710422666954443"/>
+    <dynamics damping="0.5"/>
+  </joint>
+  <link name="handl_finger_thumb3">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.000359352 0.0189541 0.00230014"/>
+      <mass value="0.05"/>
+      <inertia ixx="1.05986e-05" ixy="0" ixz="0" iyy="3.03593e-06" iyz="0" izz="1.09346e-05"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/visual/handl_finger_thumb3_joint.obj"/>
+      </geometry>
+      <material name="grey">
+        <color rgba="0.537 0.537 0.537 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/collision/handl_finger_thumb3_joint.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="handl_finger_index1_joint" type="revolute">
+    <parent link="arml_wri2"/>
+    <child link="handl_finger_index1"/>
+    <origin rpy="0 0.0872664 0" xyz="0.08965 0.0096 -0.025"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="240" lower="0" upper="1.5708" velocity="1.710422666954443"/>
+    <dynamics damping="0.5"/>
+  </joint>
+  <link name="handl_finger_index1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0221634 -0.00896459 0.00233813"/>
+      <mass value="0.05"/>
+      <inertia ixx="2.07679e-06" ixy="0" ixz="0" iyy="1.09969e-05" iyz="0" izz="1.18508e-05"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/visual/handl_finger_index1_joint.obj"/>
+      </geometry>
+      <material name="grey">
+        <color rgba="0.537 0.537 0.537 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/collision/handl_finger_index1_joint.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="handl_finger_index2_joint" type="revolute">
+    <parent link="handl_finger_index1"/>
+    <child link="handl_finger_index2"/>
+    <origin rpy="0 0 0" xyz="0.0453 -0.0002 0"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="240" lower="0" upper="1.5708" velocity="1.710422666954443"/>
+    <dynamics damping="0.5"/>
+  </joint>
+  <link name="handl_finger_index2">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0126357 -0.00834728 0.00201315"/>
+      <mass value="0.05"/>
+      <inertia ixx="2.61714e-06" ixy="0" ixz="0" iyy="1.64377e-05" iyz="0" izz="1.67053e-05"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/visual/handl_finger_index2_joint.obj"/>
+      </geometry>
+      <material name="white">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/collision/handl_finger_index2_joint.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="handl_finger_middle1_joint" type="revolute">
+    <parent link="arml_wri2"/>
+    <child link="handl_finger_middle1"/>
+    <origin rpy="0 0 0" xyz="0.0913 0.0098 -0.0047"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="240" lower="0" upper="1.5708" velocity="1.710422666954443"/>
+    <dynamics damping="0.5"/>
+  </joint>
+  <link name="handl_finger_middle1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0224319 -0.00941866 0.00186457"/>
+      <mass value="0.05"/>
+      <inertia ixx="2.14484e-06" ixy="0" ixz="0" iyy="1.08094e-05" iyz="0" izz="1.17542e-05"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/visual/handl_finger_middle1_joint.obj"/>
+      </geometry>
+      <material name="grey">
+        <color rgba="0.537 0.537 0.537 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/collision/handl_finger_middle1_joint.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="handl_finger_middle2_joint" type="revolute">
+    <parent link="handl_finger_middle1"/>
+    <child link="handl_finger_middle2"/>
+    <origin rpy="0 0 0" xyz="0.045 -0.00305 0"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="240" lower="0" upper="1.5708" velocity="1.710422666954443"/>
+    <dynamics damping="0.5"/>
+  </joint>
+  <link name="handl_finger_middle2">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0127924 -0.009382 0.00184998"/>
+      <mass value="0.05"/>
+      <inertia ixx="2.71866e-06" ixy="0" ixz="0" iyy="1.61015e-05" iyz="0" izz="1.64868e-05"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/visual/handl_finger_middle2_joint.obj"/>
+      </geometry>
+      <material name="white">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/collision/handl_finger_middle2_joint.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="handl_finger_ring1_joint" type="revolute">
+    <parent link="arml_wri2"/>
+    <child link="handl_finger_ring1"/>
+    <origin rpy="0 -0.0872664 0" xyz="0.0912 0.0098 0.0142"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="240" lower="0" upper="1.5708" velocity="1.710422666954443"/>
+    <dynamics damping="0.5"/>
+  </joint>
+  <link name="handl_finger_ring1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0201865 -0.00755002 0.00209084"/>
+      <mass value="0.05"/>
+      <inertia ixx="1.60289e-06" ixy="0" ixz="0" iyy="8.85384e-06" iyz="0" izz="9.25302e-06"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/visual/handl_finger_ring1_joint.obj"/>
+      </geometry>
+      <material name="grey">
+        <color rgba="0.537 0.537 0.537 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/collision/handl_finger_ring1_joint.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="handl_finger_ring2_joint" type="revolute">
+    <parent link="handl_finger_ring1"/>
+    <child link="handl_finger_ring2"/>
+    <origin rpy="0 0 0" xyz="0.04 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="240" lower="0" upper="1.5708" velocity="1.710422666954443"/>
+    <dynamics damping="0.5"/>
+  </joint>
+  <link name="handl_finger_ring2">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.013018 -0.00874729 0.00195051"/>
+      <mass value="0.05"/>
+      <inertia ixx="2.60839e-06" ixy="0" ixz="0" iyy="1.61897e-05" iyz="0" izz="1.6466e-05"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/visual/handl_finger_ring2_joint.obj"/>
+      </geometry>
+      <material name="white">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/collision/handl_finger_ring2_joint.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="handl_finger_pinky1_joint" type="revolute">
+    <parent link="arml_wri2"/>
+    <child link="handl_finger_pinky1"/>
+    <origin rpy="0 -0.1745327 0" xyz="0.08845 0.0097 0.0317"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="240" lower="0" upper="1.5708" velocity="1.710422666954443"/>
+    <dynamics damping="0.5"/>
+  </joint>
+  <link name="handl_finger_pinky1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0137648 -0.00795003 0.00188619"/>
+      <mass value="0.05"/>
+      <inertia ixx="1.73634e-06" ixy="0" ixz="0" iyy="4.73746e-06" iyz="0" izz="5.26988e-06"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/visual/handl_finger_pinky1_joint.obj"/>
+      </geometry>
+      <material name="grey">
+        <color rgba="0.537 0.537 0.537 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/collision/handl_finger_pinky1_joint.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="handl_finger_pinky2_joint" type="revolute">
+    <parent link="handl_finger_pinky1"/>
+    <child link="handl_finger_pinky2"/>
+    <origin rpy="0 0 0" xyz="0.027 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="240" lower="0" upper="1.5708" velocity="1.710422666954443"/>
+    <dynamics damping="0.5"/>
+  </joint>
+  <link name="handl_finger_pinky2">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.00993043 -0.00882504 0.00149763"/>
+      <mass value="0.05"/>
+      <inertia ixx="2.14949e-06" ixy="0" ixz="0" iyy="1.28698e-05" iyz="0" izz="1.34959e-05"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/visual/handl_finger_pinky2_joint.obj"/>
+      </geometry>
+      <material name="white">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/collision/handl_finger_pinky2_joint.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="armr_sho1_joint" type="revolute">
+    <parent link="torso_pitch"/>
+    <child link="armr_sho1"/>
+    <origin rpy="-1.5707964 0 0" xyz="0 0.2103 0"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="240" lower="0" upper="0.785398" velocity="1.710422666954443"/>
+    <dynamics damping="0.5"/>
+  </joint>
+  <link name="armr_sho1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.00635496 0.109694 0.0328288"/>
+      <mass value="0.77"/> <!-- heavier than arml_shoe1 -->
+      <inertia ixx="0.00182348" ixy="0" ixz="0" iyy="0.00271326" iyz="0" izz="0.00260599"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/visual/armr_sho1_joint.obj"/>
+      </geometry>
+      <material name="white">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/collision/armr_sho1_joint.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="armr_sho2_joint" type="revolute">
+    <parent link="armr_sho1"/>
+    <child link="armr_sho2"/>
+    <origin rpy="-1.3089971 0 0" xyz="0 0.136249 0.0599"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="240" lower="-0.523599" upper="2.61799" velocity="1.710422666954443"/>
+    <dynamics damping="0.5"/>
+  </joint>
+  <link name="armr_sho2">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.0015 -0.0000173714 0.0492432"/>
+      <mass value="0.58"/>
+      <inertia ixx="0.00061498" ixy="0" ixz="0" iyy="0.000689705" iyz="0" izz="0.000469024"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/visual/armr_sho2_joint.obj"/>
+      </geometry>
+      <material name="white">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/collision/armr_sho2_joint.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="armr_sho3_joint" type="revolute">
+    <parent link="armr_sho2"/>
+    <child link="armr_sho3"/>
+    <origin rpy="-1.5707964 1.4835301 -1.5707964" xyz="-0.0165 0 0.066"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="240" lower="-0.261799" upper="1.39626" velocity="1.710422666954443"/>
+    <dynamics damping="0.5"/>
+  </joint>
+  <link name="armr_sho3">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 -0.0575318 0.0134998"/>
+      <mass value="0.51"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0.0575321" iyz="0" izz="0.0195"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/visual/armr_sho3_joint.obj"/>
+      </geometry>
+      <material name="white">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/collision/armr_sho3_joint.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="armr_sho4_joint" type="revolute">
+    <parent link="armr_sho3"/>
+    <child link="armr_sho4"/>
+    <origin rpy="-1.5707964 0 0" xyz="0 0.1026 0.0165"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="240" lower="-1.39626" upper="2.96706" velocity="1.710422666954443"/>
+    <dynamics damping="0.5"/>
+  </joint>
+  <link name="armr_sho4">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.00549999 0.008 0.114167"/>
+      <mass value="1.44"/>
+      <inertia ixx="0.00678104" ixy="0" ixz="0" iyy="0.00688041" iyz="0" izz="0.0011448"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/visual/armr_sho4_joint.obj"/>
+      </geometry>
+      <material name="white">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/collision/armr_sho4_joint.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="armr_elb1_joint" type="revolute">
+    <parent link="armr_sho4"/>
+    <child link="armr_elb1"/>
+    <origin rpy="-1.5707964 0 1.5707964" xyz="-0.0215 0.01 0.1974"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="240" lower="-0.0872665" upper="1.8151424" velocity="1.710422666954443"/>
+    <dynamics damping="0.5"/>
+  </joint>
+  <link name="armr_elb1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 -0.0334756 -0.0166789"/>
+      <mass value="0.61"/>
+      <inertia ixx="0.00114668" ixy="0" ixz="0" iyy="0.000480918" iyz="0" izz="0.0010953"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/visual/armr_elb1_joint.obj"/>
+      </geometry>
+      <material name="white">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/collision/armr_elb1_joint.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="armr_elb2_joint" type="revolute">
+    <parent link="armr_elb1"/>
+    <child link="armr_elb2"/>
+    <origin rpy="0 1.5707963 -1.5707964" xyz="0 -0.0858 -0.0205"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="240" lower="-3.14159" upper="1.5708" velocity="1.710422666954443"/>
+    <dynamics damping="0.5"/>
+  </joint>
+  <link name="armr_elb2">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.000975135 0.0000310054 0.0877994"/>
+      <mass value="0.43"/>
+      <inertia ixx="0.00142282" ixy="0" ixz="0" iyy="0.00122507" iyz="0" izz="0.000422095"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/visual/armr_elb2_joint.obj"/>
+      </geometry>
+      <material name="white">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/collision/armr_elb2_joint.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="armr_wri1_joint" type="revolute">
+    <parent link="armr_elb2"/>
+    <child link="armr_wri1"/>
+    <origin rpy="1.5707963 0 -1.5707963" xyz="-0.0005 0 0.1642"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="240" lower="-0.349066" upper="0.349066" velocity="1.710422666954443"/>
+    <dynamics damping="0.5"/>
+  </joint>
+  <link name="armr_wri1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.5"/>
+      <inertia ixx="0.089890" ixy="0" ixz="0" iyy="0.0880982" iyz="0" izz="0.0122883"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/visual/armr_wri1_joint.obj"/>
+      </geometry>
+      <material name="light_grey">
+        <color rgba="0.796078431 0.796078431 0.752941176 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <sphere radius="0.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="armr_wri2_joint" type="revolute">
+    <parent link="armr_wri1"/>
+    <child link="armr_wri2"/>
+    <origin rpy="-1.5707964 0 1.5707964" xyz="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="240" lower="-1.5708" upper="1.5708" velocity="1.710422666954443"/>
+    <dynamics damping="0.5"/>
+  </joint>
+  <link name="armr_wri2">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0306435 -0.0000936201 0"/>
+      <mass value="0.58"/>
+      <inertia ixx="0.000423253" ixy="0" ixz="0" iyy="0.000982141" iyz="0" izz="0.00079098"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/visual/armr_wri2_joint.obj"/>
+      </geometry>
+      <material name="white">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/collision/armr_wri2_joint.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="handr_finger_thumb1_joint" type="revolute">
+    <parent link="armr_wri2"/>
+    <child link="handr_finger_thumb1"/>
+    <origin rpy="1.5707964 0 -1.5707964" xyz="0.03527 0.01025 0.0091"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="240" lower="0" upper="1.5708" velocity="1.710422666954443"/>
+    <dynamics damping="0.5"/>
+  </joint>
+  <link name="handr_finger_thumb1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.00747756 0.0201107 0.00219502"/>
+      <mass value="0.05"/>
+      <inertia ixx="1.24401e-05" ixy="0" ixz="0" iyy="5.68048e-06" iyz="0" izz="9.92836e-06"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/visual/handr_finger_thumb1_joint.obj"/>
+      </geometry>
+      <material name="white">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/collision/handr_finger_thumb1_joint.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="handr_finger_thumb2_joint" type="revolute">
+    <parent link="handr_finger_thumb1"/>
+    <child link="handr_finger_thumb2"/>
+    <origin rpy="0 -1.5707963 0" xyz="0.00375 0.030 -0.00425"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="240" lower="0" upper="1.5708" velocity="1.710422666954443"/>
+    <dynamics damping="0.5"/>
+  </joint>
+  <link name="handr_finger_thumb2">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0095266 0.0211519 -0.00212523"/>
+      <mass value="0.05"/>
+      <inertia ixx="1.06034e-05" ixy="0" ixz="0" iyy="3.76921e-06" iyz="0" izz="1.14429e-05"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/visual/handr_finger_thumb2_joint.obj"/>
+      </geometry>
+      <material name="white">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/collision/handr_finger_thumb2_joint.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="handr_finger_thumb3_joint" type="revolute">
+    <parent link="handr_finger_thumb2"/>
+    <child link="handr_finger_thumb3"/>
+    <origin rpy="0 0 0" xyz="0.0029 0.0293831 0"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="240" lower="0" upper="1.5708" velocity="1.710422666954443"/>
+    <dynamics damping="0.5"/>
+  </joint>
+  <link name="handr_finger_thumb3">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.00180939 0.0220781 0.0"/>
+      <mass value="0.05"/>
+      <inertia ixx="1.05987e-05" ixy="0" ixz="0" iyy="3.03593e-06" iyz="0" izz="1.09346e-05"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/visual/handr_finger_thumb3_joint.obj"/>
+      </geometry>
+      <material name="grey">
+        <color rgba="0.537 0.537 0.537 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/collision/handr_finger_thumb3_joint.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="handr_finger_index1_joint" type="revolute">
+    <parent link="armr_wri2"/>
+    <child link="handr_finger_index1"/>
+    <origin rpy="0 -0.0872664 0" xyz="0.0897 0.0101 0.023"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="240" lower="0" upper="1.5708" velocity="1.710422666954443"/>
+    <dynamics damping="0.5"/>
+  </joint>
+  <link name="handr_finger_index1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0226499 -0.00696484 -0.0000109538"/>
+      <mass value="0.05"/>
+      <inertia ixx="2.07679e-06" ixy="0" ixz="0" iyy="1.09969e-05" iyz="0" izz="1.18508e-05"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/visual/handr_finger_index1_joint.obj"/>
+      </geometry>
+      <material name="grey">
+        <color rgba="0.537 0.537 0.537 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/collision/handr_finger_index1_joint.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="handr_finger_index2_joint" type="revolute">
+    <parent link="handr_finger_index1"/>
+    <child link="handr_finger_index2"/>
+    <origin rpy="0 0 0" xyz="0.04524 0.0002 0"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="240" lower="0" upper="1.5708" velocity="1.710422666954443"/>
+    <dynamics damping="0.5"/>
+  </joint>
+  <link name="handr_finger_index2">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0129353 -0.00674746 -0.0000463914"/>
+      <mass value="0.05"/>
+      <inertia ixx="2.61714e-06" ixy="0" ixz="0" iyy="1.64377e-05" iyz="0" izz="1.67053e-05"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/visual/handr_finger_index2_joint.obj"/>
+      </geometry>
+      <material name="white">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/collision/handr_finger_index2_joint.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="handr_finger_middle1_joint" type="revolute">
+    <parent link="armr_wri2"/>
+    <child link="handr_finger_middle1"/>
+    <origin rpy="0 0 0" xyz="0.0912501 0.01025 0.003"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="240" lower="0" upper="1.5708" velocity="1.710422666954443"/>
+    <dynamics damping="0.5"/>
+  </joint>
+  <link name="handr_finger_middle1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0224819 -0.00736877 -0.00016424"/>
+      <mass value="0.05"/>
+      <inertia ixx="2.02606e-06" ixy="0" ixz="0" iyy="1.09037e-05" iyz="0" izz="1.17298e-05"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/visual/handr_finger_middle1_joint.obj"/>
+      </geometry>
+      <material name="grey">
+        <color rgba="0.537 0.537 0.537 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/collision/handr_finger_middle1_joint.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="handr_finger_middle2_joint" type="revolute">
+    <parent link="handr_finger_middle1"/>
+    <child link="handr_finger_middle2"/>
+    <origin rpy="0 0 0" xyz="0.045 -0.003 0"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="240" lower="0" upper="1.5708" velocity="1.710422666954443"/>
+    <dynamics damping="0.5"/>
+  </joint>
+  <link name="handr_finger_middle2">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0128425 -0.00738218 -0.000149725"/>
+      <mass value="0.05"/>
+      <inertia ixx="2.7138e-06" ixy="0" ixz="0" iyy="1.60995e-05" iyz="0" izz="1.6484e-05"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/visual/handr_finger_middle2_joint.obj"/>
+      </geometry>
+      <material name="white">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/collision/handr_finger_middle2_joint.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="handr_finger_ring1_joint" type="revolute">
+    <parent link="armr_wri2"/>
+    <child link="handr_finger_ring1"/>
+    <origin rpy="0 0.0872664 0" xyz="0.091442 0.01025 -0.0138"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="240" lower="0" upper="1.5708" velocity="1.710422666954443"/>
+    <dynamics damping="0.5"/>
+  </joint>
+  <link name="handr_finger_ring1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0199805 -0.0055 -0.0025101"/>
+      <mass value="0.05"/>
+      <inertia ixx="1.60289e-06" ixy="0" ixz="0" iyy="8.85386e-06" iyz="0" izz="9.25304e-06"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/visual/handr_finger_ring1_joint.obj"/>
+      </geometry>
+      <material name="grey">
+        <color rgba="0.537 0.537 0.537 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/collision/handr_finger_ring1_joint.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="handr_finger_ring2_joint" type="revolute">
+    <parent link="handr_finger_ring1"/>
+    <child link="handr_finger_ring2"/>
+    <origin rpy="0 0 0" xyz="0.04 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="240" lower="0" upper="1.5708" velocity="1.710422666954443"/>
+    <dynamics damping="0.5"/>
+  </joint>
+  <link name="handr_finger_ring2">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0127533 -0.00669734 -0.00250811"/>
+      <mass value="0.05"/>
+      <inertia ixx="2.60839e-06" ixy="0" ixz="0" iyy="1.61897e-05" iyz="0" izz="1.64661e-05"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/visual/handr_finger_ring2_joint.obj"/>
+      </geometry>
+      <material name="white">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/collision/handr_finger_ring2_joint.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="handr_finger_pinky1_joint" type="revolute">
+    <parent link="armr_wri2"/>
+    <child link="handr_finger_pinky1"/>
+    <origin rpy="0 0.1745327 0" xyz="0.0888397 0.01024 -0.0311"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="240" lower="0" upper="1.5708" velocity="1.710422666954443"/>
+    <dynamics damping="0.5"/>
+  </joint>
+  <link name="handr_finger_pinky1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0134853 -0.00599024 -0.0025446"/>
+      <mass value="0.05"/>
+      <inertia ixx="1.73634e-06" ixy="0" ixz="0" iyy="4.73748e-06" iyz="0" izz="5.26989e-06"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/visual/handr_finger_pinky1_joint.obj"/>
+      </geometry>
+      <material name="grey">
+        <color rgba="0.537 0.537 0.537 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/collision/handr_finger_pinky1_joint.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="handr_finger_pinky2_joint" type="revolute">
+    <parent link="handr_finger_pinky1"/>
+    <child link="handr_finger_pinky2"/>
+    <origin rpy="0 0 0" xyz="0.027 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="240" lower="0" upper="1.5708" velocity="1.710422666954443"/>
+    <dynamics damping="0.5"/>
+  </joint>
+  <link name="handr_finger_pinky2">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.00968729 -0.00686527 -0.00256493"/>
+      <mass value="0.05"/>
+      <inertia ixx="2.14949e-06" ixy="0" ixz="0" iyy="1.28698e-05" iyz="0" izz="1.34959e-05"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/visual/handr_finger_pinky2_joint.obj"/>
+      </geometry>
+      <material name="white">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://armar/description/meshes/armar4/collision/handr_finger_pinky2_joint.stl"/>
+      </geometry>
+    </collision>
+  </link>
+</robot>

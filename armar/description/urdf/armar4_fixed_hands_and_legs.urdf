@@ -1,8 +1,14 @@
 <?xml version="1.0" ?>
 <robot name="main">
-  <link name="world"/>
+  <link name="base">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.00001"/>
+      <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1"/>
+    </inertial>
+  </link>
   <joint name="root_joint" type="fixed">
-    <parent link="world"/>
+    <parent link="base"/>
     <child link="root"/>
     <origin rpy="0 0 1.5707964" xyz="0 0 1.0225"/>
   </joint>
@@ -10,7 +16,7 @@
     <inertial>
       <origin rpy="0 0 0" xyz="0 0 -0.0464755"/>
       <mass value="5"/>
-      <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1"/>
+      <inertia ixx="0.0570551" ixy="0" ixz="0" iyy="0.0867303" iyz="0" izz="0.101375"/>
     </inertial>
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>

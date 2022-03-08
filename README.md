@@ -15,6 +15,22 @@ As of now, the following robots are supported:
         </tr>
     </thead>
     <tbody>
+         <tr>
+            <td rowspan=3 style="text-align:center"><img src="https://user-images.githubusercontent.com/51738372/157268550-5d765012-e46b-4051-ab4c-f55d362b7585.png" width="100%"></td>
+            <td>armar4</td>
+            <td>52</td>
+            <td>The humanoid robot Armar 4 with a fixed head.</td>
+        </tr>
+        <tr>
+            <td>armar4_fixed_hands</td>
+            <td>30</td>
+            <td>Like armar4, but with rigid hands. </td>
+        </tr>
+        <tr>
+            <td>armar4_fixed_hands_and_legs</td>
+            <td>18</td>
+            <td>Like armar4, but with rigid hands and fixed legs. </td>
+        </tr>
         <tr>
             <td rowspan=2 style="text-align:center"><img src="https://user-images.githubusercontent.com/51738372/130495206-be360e87-2444-4481-86eb-44df5c949880.png" width="100%"></td>
             <td>armar6</td>

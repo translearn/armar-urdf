@@ -74,11 +74,9 @@ import armar
 armar.get_path_to_urdf_file(robot_name="armar6")
 ```
 
-## Example: Models controlled by a Neural Network
+## Examples
 
-[![Video: 2 vs. 4 Arms: Humanoid Battle controlled by Neural Networks](https://user-images.githubusercontent.com/51738372/130785704-014d9df6-e0b8-425d-991a-22581224f666.png)](https://www.youtube.com/watch?v=Iib3wC0O5no)
-
-
+Exemplary applications and further renderings can be found in our [safeMotions](https://github.com/translearn/safeMotions) and our [pathTracking](https://github.com/translearn/pathTracking) repositories.
 
 
 ## Acknowledgment and Disclaimer
